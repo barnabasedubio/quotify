@@ -36,10 +36,6 @@ export default {
   methods: {
     seekPermission() {
       EVENT_BUS.quotify_sendPermissionRequest(this.quoteObject)
-    },
-
-    sendQuote() {
-      EVENT_BUS.quotify_relayQuoteInfo(this.quoteObject)
     }
   }
 }
