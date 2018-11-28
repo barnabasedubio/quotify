@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Quotify.</h1>
     <quote-add></quote-add>
     <quote-capacity-controller></quote-capacity-controller>
     <quote-list></quote-list>
