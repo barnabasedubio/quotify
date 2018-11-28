@@ -1,10 +1,9 @@
 <template>
   <div>
     <p>quote to send to quote card component: </p>
-    <p>content: {{ quoteContent }}</p>
-    <p>author: {{ quoteAuthor }}</p>
-    <quote-card></quote-card>
-
+    <div v-for="quoteObject in quoteObjects" :key="quoteObject.id">
+      <quote-card :quoteObject = quoteObject></quote-card>
+    </div>
   </div>
 </template>
 
@@ -15,21 +14,25 @@ import QuoteCard from './QuoteCard.vue'
 export default {
 
   components: {
-    QuoteCard,
+    QuoteCard
   },
 
   data() {
     return {
-      quoteContent: "",
-      quoteAuthor: "",
-    }    
+      quoteObjects: []
+      }    
   },
 
   created() {
-    EVENT_BUS.$on('quotify_quoteIncoming', (quoteObject) => {
-      this.quoteContent = quoteObject.quoteContent
-      this.quoteAuthor = (quoteObject.quoteAuthor) ? quoteObject.quoteAuthor : "anonymous"
+    EVENT_BUS.$on('quotify_quotePermissionGranted', (quoteObject) => {
+      let toAdd = quoteObject
+      toAdd.author = quoteObject.author ? quoteObject.author : "anonymous"
+      this.quoteObjects.push(toAdd)
     })
   }
 }
 </script>
+
+<style scoped lang="scss">
+
+</style>
