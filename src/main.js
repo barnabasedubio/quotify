@@ -9,7 +9,7 @@ export const EVENT_BUS = new Vue({
     },
 
     quotify_relayQuoteInfo(quoteObject) {
-      this.$emit('quotify_quoteIncoming', quoteObject)
+      this.$emit('quotify_quotePermissionGranted', quoteObject)
     },
   }
 })
