@@ -7,7 +7,9 @@
               v-model="quoteContent"
               placeholder="click here to add a quote"></textarea>
 
-    <input type="text" v-model="quoteAuthor">
+    <input type="text" 
+            v-model="quoteAuthor"
+            placeholder="add the author">
     <button @click="seekPermission()">add quote</button>
     <button @click="clearInput()">clear</button>
     
@@ -21,8 +23,8 @@ export default {
 
   data() {
     return {
-      quoteContent: "",
-      quoteAuthor: "",
+      quoteContent: '',
+      quoteAuthor: '',
     }
   },
 
@@ -37,12 +39,16 @@ export default {
 
   methods: {
     seekPermission() {
+      if (!this.quoteContent) {
+        this.quoteContent = 'nothing.'
+        this.quoteAuthor = 'A wise man once'
+      }
       EVENT_BUS.quotify_sendPermissionRequest(this.quoteObject)
     },
 
     clearInput() {
-      this.quoteContent = ""
-      this.quoteAuthor = ""
+      this.quoteContent = ''
+      this.quoteAuthor = ''
     }
   },
 
@@ -55,4 +61,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  textarea {
+    display: block;
+    outline: none;
+    resize: none;
+    border-radius: 8px;
+  }
 </style>
