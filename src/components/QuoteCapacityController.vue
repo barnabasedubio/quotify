@@ -1,6 +1,10 @@
 <template>
   <div>
-    <p>capacity: {{ capacity }} / 10</p>
+    <p>capactiy</p>
+    <!-- <p id="capacity_bar">{{ capacity }} / 10</p> -->
+    <div class="capacity_bar">
+      <div class="progress" :style="capacityProgressBar"></div>
+    </div>
   </div>
 </template>
 
@@ -12,6 +16,14 @@ export default {
   data() {
     return {
       capacity: 0
+    }
+  },
+
+  computed: {
+    capacityProgressBar() {
+      return {
+        width: this.capacity * 10 + '%'
+      }
     }
   },
 
@@ -38,4 +50,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  div {
+    text-align: center;
+  }
+  .capacity_bar {
+    border: 2px solid purple;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 1rem;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .progress {
+    height: inherit;
+    background-color: #444;
+    transition: width 0.7s;
+  }
+
 </style>
