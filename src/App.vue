@@ -1,9 +1,16 @@
 <template>
   <div id="app">
-    <h1>Quotify.</h1>
-    <quote-add></quote-add>
-    <quote-capacity-controller></quote-capacity-controller>
-    <quote-list></quote-list>
+
+    <div class="upper">
+      <h1>Quotify.</h1>
+      <quote-add></quote-add>
+      <quote-capacity-controller></quote-capacity-controller>
+    </div>
+
+    <div class="lower">
+      <quote-list></quote-list>
+    </div>
+
   </div>
 </template>
 
@@ -22,4 +29,20 @@ export default {
 </script>
 
 <style lang="scss">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  #app {
+    margin: 0;
+  }
+  .upper {
+    border: 1px solid red;
+    height: 60vh;
+  }
+
+  .lower {
+    border: 1px solid orange;
+    height: 40vh;
+  }
 </style>
