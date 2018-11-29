@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <p>quote to send to quote card component: </p>
+  <div id="quote_list_div">
     <div v-for="quoteObject in quoteObjects" :key="quoteObject.id">
       <quote-card :quoteObject = quoteObject></quote-card>
     </div>
@@ -34,5 +33,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  #quote_list_div {
+    border: 2px solid green;
+    display: flex;
+    /* shorthand for flex direction and flex wrap */
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+    /*padding-top: 2rem;
+    padding-bottom: 2rem;*/
+    height: inherit;
+  }
 </style>

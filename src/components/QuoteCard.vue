@@ -19,7 +19,11 @@ export default {
 
   div {
     border: 1px solid orange;
-    padding: 20px;
+    padding: 30px 20px;
+    display: inline-block;
+    width: 18rem;
+    height: 6rem;
+    margin: 0.5rem;
   }
 
 </style>
