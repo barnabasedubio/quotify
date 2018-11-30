@@ -2,16 +2,20 @@
   <div>
     <textarea name="" 
               id="" 
-              cols="30" 
-              rows="10" 
+              cols="70" 
+              rows="4" 
               v-model="quoteContent"
-              placeholder="click here to add a quote"></textarea>
+              placeholder="click here to add a quote."></textarea>
 
-    <input type="text" 
+    <div class="inputs">
+      <input type="text" 
+            class="add_author"
             v-model="quoteAuthor"
             placeholder="add the author">
-    <button @click="seekPermission()">add quote</button>
-    <button @click="clearInput()">clear</button>
+      <button class="add_quote" @click="clearInput()">clear</button>
+      <button class="clear_entry" @click="seekPermission()">add quote</button>
+    </div>
+    
     
   </div>
 </template>
@@ -65,6 +69,34 @@ export default {
     display: block;
     outline: none;
     resize: none;
-    border-radius: 8px;
+    border: 2px solid red;
+    margin: 2rem auto 0 auto;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    line-height: 1.5rem;
+  }
+  .inputs {
+    margin-top: 2rem;
+  }
+  .add_author {
+    position: relative;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 15rem;
+    border: 2px solid red;
+    outline: none;
+  }
+  button {
+    float: right;
+    line-height: 1.5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 2px solid red;
+    outline: none;
+  }
+  .clear_entry {
+    margin-right: 1rem;
   }
 </style>

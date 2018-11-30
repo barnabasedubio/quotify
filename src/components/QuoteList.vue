@@ -34,15 +34,13 @@ export default {
 
 <style scoped lang="scss">
   #quote_list_div {
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     display: flex;
     /* shorthand for flex direction and flex wrap */
-    flex-flow: row wrap;
+    flex-flow: row-reverse wrap-reverse;
     justify-content: center;
     align-content: center;
-    margin-top: 1rem;
-    /*padding-top: 2rem;
-    padding-bottom: 2rem;*/
+    padding: 1rem 0;
     height: inherit;
   }
 </style>

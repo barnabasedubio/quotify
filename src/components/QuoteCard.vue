@@ -21,9 +21,8 @@ export default {
     border: 1px solid orange;
     padding: 30px 20px;
     display: inline-block;
-    width: 18rem;
-    height: 6rem;
     margin: 0.5rem;
+    /*transition: all 0.5s;*/
   }
 
 </style>

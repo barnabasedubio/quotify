@@ -1,7 +1,6 @@
 <template>
   <div>
     <p>capactiy</p>
-    <!-- <p id="capacity_bar">{{ capacity }} / 10</p> -->
     <div class="capacity_bar">
       <div class="progress" :style="capacityProgressBar"></div>
     </div>
@@ -53,13 +52,17 @@ export default {
   div {
     text-align: center;
   }
+  p {
+    position: relative;
+    top: 4.5rem;
+  }
   .capacity_bar {
     border: 2px solid purple;
     border-radius: 16px;
     overflow: hidden;
     height: 1rem;
     width: 50%;
-    margin: 0 auto;
+    margin: 5rem auto 0 auto;
   }
 
   .progress {
