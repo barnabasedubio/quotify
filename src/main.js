@@ -11,6 +11,10 @@ export const EVENT_BUS = new Vue({
     quotify_relayQuoteInfo(quoteObject) {
       this.$emit('quotify_quotePermissionGranted', quoteObject)
     },
+  
+    quotify_cardWasDeleted(empty) { 
+      this.$emit('cardWasDeleted', empty)
+    }
   }
 })
 

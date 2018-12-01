@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <p>content: {{ quoteObject.content }}</p>
-    <p>author: {{ quoteObject.author }}</p>
+  <div class="card_box" @click="deleteQuoteCard()">
+    <div class="card_box_inner">
+      <p>content: {{ quoteObject.content }}</p>
+      <p>author: {{ quoteObject.author }}</p>
+      <p>id: {{ quoteObject.id }}</p>
+    </div>
+
   </div>
 </template>
 
@@ -11,6 +15,12 @@ export default {
 
   props: {
     quoteObject: Object
+  },
+
+  methods: {
+    deleteQuoteCard() {
+      this.$emit('deleteMe', this.quoteObject)
+    }
   }
 }
 </script>
@@ -23,6 +33,7 @@ export default {
     display: inline-block;
     margin: 0.5rem;
     /*transition: all 0.5s;*/
+    cursor: pointer;
   }
 
 </style>

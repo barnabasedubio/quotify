@@ -1,7 +1,8 @@
 <template>
   <div id="quote_list_div">
     <div v-for="quoteObject in quoteObjects" :key="quoteObject.id">
-      <quote-card :quoteObject = quoteObject></quote-card>
+      <quote-card :quoteObject = quoteObject
+                  v-on:deleteMe="deleteCard($event)"></quote-card>
     </div>
   </div>
 </template>
@@ -20,6 +21,15 @@ export default {
     return {
       quoteObjects: []
       }    
+  },
+
+  methods: {
+    deleteCard(obj) {
+      let id = obj.id
+      this.quoteObjects = this.quoteObjects.filter(quote => quote.id !== id)
+      // since to my understanding objects must be passed to eventbus $emit, pass empty object.
+      EVENT_BUS.quotify_cardWasDeleted({})
+    }
   },
 
   created() {
