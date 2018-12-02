@@ -6,8 +6,9 @@
         <h1 class="page_title">Quotify.</h1>
         <quote-add></quote-add>
       </div>
-        <quote-capacity-controller></quote-capacity-controller>
     </div>
+
+    <quote-capacity-controller></quote-capacity-controller>
 
     <div class="lower">
       <quote-list></quote-list>
@@ -37,9 +38,14 @@ export default {
   }
   html {
     font-size: 16px;
+    height: 100%;
+  }
+  body {
+    height: inherit;
   }
   #app {
     margin: 0;
+    height: inherit;
   }
   .page_title {
     width: 10rem;
@@ -49,8 +55,9 @@ export default {
   }
   .upper {
     border: 1px solid red;
-    height: 63vh;
-    /*text-align: center;*/
+    display: flex;
+    align-items: center;
+    height: 60%;
   }
   .upper_content {
     position: relative;
