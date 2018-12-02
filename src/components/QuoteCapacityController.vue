@@ -57,24 +57,27 @@ export default {
 <style scoped lang="scss">
   div {
     text-align: center;
+    height: 3.5rem;
+    margin-top: 0.5rem;
   }
   p {
     position: relative;
-    top: 4.5rem;
-  }
+    bottom: 0.5rem;
+  } 
   .capacity_bar {
     border: 2px solid purple;
     border-radius: 16px;
     overflow: hidden;
     height: 1rem;
     width: 50%;
-    margin: 5rem auto 0 auto;
+    margin: 0 auto;
   }
 
   .progress {
-    height: inherit;
+    height: 2rem;
     background-color: #444;
     transition: width 0.7s;
+    transform: translateY(-50%);
   }
 
 </style>

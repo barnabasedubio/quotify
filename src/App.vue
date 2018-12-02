@@ -68,6 +68,5 @@ export default {
   }
   .lower {
     border: 1px solid orange;
-    /*height: 40vh;*/
   }
 </style>
