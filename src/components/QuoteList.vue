@@ -2,7 +2,7 @@
   <div id="quote_list_div">
     <div v-for="quoteObject in quoteObjects" :key="quoteObject.id">
       <quote-card :quoteObject = quoteObject
-                  v-on:deleteMe="deleteCard($event)"></quote-card>
+                  @deleteMe="deleteCard($event)"></quote-card>
     </div>
   </div>
 </template>
