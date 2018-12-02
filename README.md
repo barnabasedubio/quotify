@@ -1,6 +1,6 @@
-# quotify
+# quotify - simple quote creator
 
-> A Vue.js project
+> My first introduction into VueJS components and how to properly handle communication using the event bus
 
 ## Build Setup
 
@@ -10,9 +10,6 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For publishing to gh-pages, I used [vue-gh-pages](https://www.npmjs.com/package/vue-gh-pages).
