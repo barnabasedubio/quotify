@@ -13,3 +13,5 @@ npm run dev
 ```
 
 For publishing to gh-pages, I used [vue-gh-pages](https://www.npmjs.com/package/vue-gh-pages).
+
+![Landing page](media/mockup.png?raw=true "Title")
