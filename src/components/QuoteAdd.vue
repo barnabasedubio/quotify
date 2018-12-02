@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <textarea name="" 
-              id="" 
-              cols="70" 
-              rows="4" 
+  <div id="quoteAdd_comp">
+    <textarea cols="70" 
+              rows="3" 
               v-model="quoteContent"
               placeholder="click here to add a quote."></textarea>
 
@@ -60,16 +58,30 @@ export default {
     EVENT_BUS.$on('quotify_quotePermissionGranted', (obj) => {
       this.clearInput()
     })
+
+    EVENT_BUS.$on('quotify_clearInputField', (empty) => {
+      this.clearInput()
+    })
   }
 }
 </script>
 
 <style scoped lang="scss">
+  #quoteAdd_comp {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
   textarea {
+    background-color: transparent;
+    font-family: 'Bodoni MT', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
     display: block;
     outline: none;
     resize: none;
-    border: 2px solid red;
+    border: none;
     margin: 2rem auto 0 auto;
     width: 100%;
     padding: 2rem;
@@ -80,21 +92,35 @@ export default {
     margin-top: 2rem;
   }
   .add_author {
+    color: white;
+    border: 2px solid white;
     position: relative;
     text-align: center;
     line-height: 1.5rem;
-    width: 15rem;
-    border: 2px solid red;
+    padding:0.5rem 1rem;
+    width: 18rem;
+    background-color: transparent;
+    font-family: 'Bodoni MT', sans-serif;
+    font-size: 1.5rem;
     outline: none;
   }
   button {
+    color: #888;
+    border: 2px solid white;
     float: right;
     line-height: 1.5rem;
-    padding: 0 1rem;
+    padding:0.5rem 1rem;
     box-sizing: border-box;
     background-color: transparent;
-    border: 2px solid red;
     outline: none;
+    font-family: 'Bodoni MT', sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s
+  }
+  button:hover {
+    background-color: white;
+    color: #252525;
   }
   .clear_entry {
     margin-right: 1rem;

@@ -31,6 +31,7 @@ export default {
     displayCapacityFull() {
       // capacity limit reached. Display error message
       alert('Capacity full. Please delete a quote to add another one.')
+      EVENT_BUS.$emit('quotify_clearInputField', {})
     }
   },
 
@@ -58,24 +59,23 @@ export default {
   div {
     text-align: center;
     height: 3.5rem;
-    margin-top: 0.5rem;
   }
   p {
     position: relative;
     bottom: 0.5rem;
+    color: white;
   } 
   .capacity_bar {
-    border: 2px solid purple;
+    border: 2px solid white;
     border-radius: 16px;
     overflow: hidden;
     height: 1rem;
     width: 50%;
     margin: 0 auto;
   }
-
   .progress {
     height: 2rem;
-    background-color: #444;
+    background-color: #F25656;
     transition: width 0.7s;
     transform: translateY(-50%);
   }

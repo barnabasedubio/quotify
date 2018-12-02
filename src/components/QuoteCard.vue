@@ -41,25 +41,33 @@ export default {
 <style scoped lang="scss">
 
   .card-box {
-    border: 1px  solid #555;
-    padding: 30px 20px;
+    padding: 30px 20px 10px 20px;
     display: inline-block;
     margin: 0.5rem;
-    min-width: 10rem;
-    min-height: 3.4rem;
+    min-width: 12rem;
+    min-height: 4rem;
     line-height: 1.5rem;
-    transition: all 0.5s;
+    transition: all 0.4s;
+    background-color: #eee;
+    box-shadow: 0 0 8px #555;
     cursor: pointer;
   }
 
   .card-box:hover {
     background-color: #555;
+    border: 1px  solid #555;
     color: #555;
+  }
+
+  .quote-text-content {
+    color: #252525;
   }
 
   .quote-text-author {
     float: right;
     margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: #777;
   }
 
   .quote-delete {

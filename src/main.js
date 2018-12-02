@@ -14,6 +14,10 @@ export const EVENT_BUS = new Vue({
   
     quotify_cardWasDeleted(empty) { 
       this.$emit('cardWasDeleted', empty)
+    },
+
+    quotify_clearInputField(empty) {
+      this.$emit('clearInput', empty)
     }
   }
 })
